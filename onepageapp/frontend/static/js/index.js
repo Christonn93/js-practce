@@ -1,4 +1,4 @@
-import Dashboard from "../views/Dashboard";
+import Dashboard from "./views/Dashboard.js";
 
 const navigateTo = url => {
     history.pushState(null, null, url);
@@ -47,7 +47,7 @@ const router = async () => {
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.addEventListener("clikc", e => {
+    document.body.addEventListener("click", e => {
         if (e.target.matches("[data-link]")) {
             e.preventDefault();
             navigateTo(e.target.href);
